@@ -1,17 +1,21 @@
-{%extends 'base.html'%} 
-{% block content %}
-<div class="container">
+{%extends 'base.html'%}
 
+ {% block content %}
 
-  <div class="row">
+ <div class="container">
 
- 
-    {% for imag in image %}
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <img src="{{imag.image.url}}" class="img-responsive" alt="Image" width='200' length='200'>
+    <div class="row">
+        <img src="{{image.image.url}}"  class="img-responsive" alt="">
     </div>
-    {% endfor %}
- 
-  </div>
+    <div class="row">
+        <h1 class="text-center">{{image.title}}</h1>
+    </div>
+       
+    <div class="row">
+        <p>{{image.description}}</p>
+    </div>
+       
+   
 </div>
+       
 {% endblock %}
