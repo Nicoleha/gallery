@@ -2,6 +2,8 @@
 
  {% block content %}
 
+ <body>
+
  <div class="container">
         <form role="search" action="{% url 'search_result' %}">
 
@@ -18,7 +20,7 @@
 
         <!--Display news Article images  -->
       
-            <a href=''><img src="{{img.image.url}}" class="img-responsive" alt="Image" width='200' length='200'></a>
+            <a><img src="{{img.image.url}}" class="img-responsive" alt="Image" width='200' length='200'></a>
       
 
     {% empty %}
@@ -28,6 +30,6 @@
 
   
     {% endfor %}
-</div>
-       
+ </div>
+</body>    
 {% endblock %}
