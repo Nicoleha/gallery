@@ -32,6 +32,14 @@ class ImageTestClass(TestCase):
         self.new_image.Category.add(self.new_cat)
 
     def tearDown(self):
-        Editor.objects.all().delete()
-        tags.objects.all().delete()
-        Article.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()
+        Image.objects.all().delete()
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_image,Image))
+
+    def test_save_method(self):
+            self.new_image.save()
+            new_images = Image.objects.all()
+            self.assertTrue(len(images) > 0)
