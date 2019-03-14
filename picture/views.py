@@ -10,7 +10,7 @@ def home(request):
 
 def search_result(request):
     if 'image' in request.GET and request.GET['image']:
-        search_ter = request.GET.get('image')
-        searched = Image.search_image()
-
+        search_term = request.GET.get('image')
+        searched = Image.search_image(search_term)
+        meaa 
 
