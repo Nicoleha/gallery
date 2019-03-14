@@ -24,3 +24,7 @@ def search_result(request):
 #         info = request.GET.get('image')
 #         the_image = Image.get_image(info)
 #         return render(request, 'info.html',{"the_image": the_image})
+
+def image(request,image_id):
+    image = Image.objects.get(id = image_id)
+    return render(request,"info.html", {"image":image})        
