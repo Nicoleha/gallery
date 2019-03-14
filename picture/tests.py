@@ -15,18 +15,32 @@ class LocationTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.loc1,Location))
 
-class ImageTestClass(TestCase):
+class CategoryTestClass(TestCase):
+    '''
+    test for Category class
+    '''
 
     def setUp(self):
-        # Creating a new editor and saving it
-        self.loc1= Location(country_name = 'Rwanda', city_name ='Kigali')
-        self.loc1.save_editor()
+        self.new_cat= Category(category = 'travel')
 
-        # Creating a new tag and saving it
-        self.new_cat = Category(Category = 'travel')
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_cat,Category))
+
+class ImageTestClass(TestCase):
+    '''
+    test for Image class
+    '''
+
+    def setUp(self):
+      
+        self.loc1= Location(country_name = 'Rwanda', city_name ='Kigali')
+        self.loc1.save()
+
+        
+        self.new_cat = Category(category = 'travel')
         self.new_cat.save()
 
-        self.new_image= Image(image = 'sky.jpeg',title = 'sky dive',description = 'a way to live adventure',location = self.loc1)
+        self.new_image= Image(image = 'sky.jpeg',title = 'sky dive',description = 'a way to live adventure',category = self.new_cat,location = self.loc1)
         self.new_image.save()
 
         self.new_image.Category.add(self.new_cat)
