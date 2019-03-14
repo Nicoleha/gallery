@@ -19,8 +19,32 @@
     {% for img in pics %}
 
         <!--Display news Article images  -->
-      
-            <a><img src="{{img.image.url}}" class="img-responsive" alt="Image" width='200' length='200'></a>
+        <a data-toggle="modal" data-target="#{{img.id}}">
+            <img src="{{img.image.url}}" class="img-responsive" alt="Image" width='200' length='200'>
+        </a>
+
+                <div id="{{img.id}}" class="modal fade" role="dialog">
+                    <div class="modal-dialog">
+                  
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h3>{{img.category}}</h3>
+                          <h4 class="modal-title">{{img.title}}</h4>
+                        </div>
+                        <div class="modal-body">
+                          <img src="{{img.image.url}}" class="img-responsive" alt="Image" width='200' length='200'>
+                          <p>{{img.description}}</p><br>
+                          <h5>{{img.location}}</h5>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                  
+                    </div>
+                </div>
       
 
     {% empty %}
