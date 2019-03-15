@@ -1,7 +1,15 @@
-body{background-image:url('https://images.pexels.com/photos/953214/pexels-photo-953214.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+body{background-image:url('https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
 background-size:cover; }
 
 img{margin:10px;
-height:300px;
-width:300px;
+height:400px;
+width:400px;
 }
+
+img:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2); 
+  }
+
+  form{ color: pink;}
