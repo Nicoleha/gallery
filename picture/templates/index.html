@@ -14,32 +14,32 @@
                   </div>
                 </div>
           
-        </form>
+        </form><br>
 
     {% for img in pics %}
 
         <!--Display news Article images  -->
         <a data-toggle="modal" data-target="#{{img.id}}">
-            <img src="{{img.image.url}}" class="img-responsive" alt="Image" width='200' length='200'>
+            <img src="{{img.image.url}}" alt="Image">
         </a>
 
-                <div id="{{img.id}}" class="modal fade" role="dialog">
+                <div id="{{img.id}}" class="modal fade" role="dialog" style="background-color:rgb(168, 105, 105);color:rgb(47, 61, 61);font-family: monospace;">
                     <div class="modal-dialog">
                   
                       <!-- Modal content-->
                       <div class="modal-content">
                         <div class="modal-header">
                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h3>{{img.category}}</h3>
-                          <h4 class="modal-title">{{img.title}}</h4>
+                          <h3 style="color:rgb(168, 105, 105);"><em>{{img.category}}</em></h3>
+                          <h3 class="modal-title"><strong>{{img.title}}</strong></h3>
                         </div>
                         <div class="modal-body">
-                          <img src="{{img.image.url}}" class="img-responsive" alt="Image" width='200' length='200'>
-                          <p>{{img.description}}</p><br>
-                          <h5>{{img.location}}</h5>
+                          <img src="{{img.image.url}}" alt="Image" width='400' length='500'>
+                          <p><strong><em>{{img.description}}</em></strong></p><br>
+                          <h5><strong>Taken in:</strong>{{img.location}}</h5>
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-default" data-dismiss="modal" style="background-color:rgb(168, 105, 105);color:white;">Close</button>
                         </div>
                       </div>
                   
