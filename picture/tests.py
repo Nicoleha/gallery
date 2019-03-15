@@ -56,16 +56,15 @@ class ImageTestClass(TestCase):
     def test_save_method(self):
             self.new_image.save()
             new_image = Image.objects.all()
-            self.assertTrue(len(Image) > 0)
+            self.assertTrue(len(new_image) > 0)
 
     def test_get_all_images(self):
         images = Image.get_all()
         self.assertTrue(len(images)>0)
-    
-    def test_get_image_by_id(self):
-        images = Image.get_image_by_id(self.images.id)
-        self.assertTrue(images == self.image)
+ 
 
     def test_search_image(self):
         images = Image.search_image('pic')
-        self.assertTrue(len(Image)>0)
+        self.assertFalse(len(images)>0)
+
+   
