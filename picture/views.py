@@ -19,11 +19,6 @@ def search_result(request):
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
 
-# def get_image(request):
-#     if 'image' in request.GET and request.GET['image']:
-#         info = request.GET.get('image')
-#         the_image = Image.get_image(info)
-#         return render(request, 'info.html',{"the_image": the_image})
 
 def image(request,image_id):
     image = Image.objects.get(id = image_id)
