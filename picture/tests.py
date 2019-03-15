@@ -43,7 +43,7 @@ class ImageTestClass(TestCase):
         self.new_image= Image(image = 'sky.jpeg',title = 'sky dive',description = 'a way to live adventure',category = self.new_cat,location = self.loc1)
         self.new_image.save()
 
-        self.new_image.Category.add(self.new_cat)
+        
 
     def tearDown(self):
         Location.objects.all().delete()
@@ -55,5 +55,17 @@ class ImageTestClass(TestCase):
 
     def test_save_method(self):
             self.new_image.save()
-            new_images = Image.objects.all()
-            self.assertTrue(len(images) > 0)
+            new_image = Image.objects.all()
+            self.assertTrue(len(Image) > 0)
+
+    def test_get_all_images(self):
+        images = Image.get_all()
+        self.assertTrue(len(images)>0)
+    
+    def test_get_image_by_id(self):
+        images = Image.get_image_by_id(self.images.id)
+        self.assertTrue(images == self.image)
+
+    def test_search_image(self):
+        images = Image.search_image('pic')
+        self.assertTrue(len(Image)>0)
